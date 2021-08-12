@@ -251,10 +251,6 @@ PRODUCT_PACKAGES += \
 # Signing Keys
 PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/oss/keys/releasekey
 
-# Screen Recorder
-PRODUCT_PACKAGES += \
-    ScreenRecorder  
-
 # Device init scripts
 PRODUCT_PACKAGES += \
     init.target.rc
