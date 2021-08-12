@@ -7,28 +7,15 @@
 # Inherit from violet device
 $(call inherit-product, device/xiaomi/violet/device.mk)
 
-# Inherit some common Resurrection stuff.
-$(call inherit-product, vendor/rr/config/common_full_phone.mk)
+# Inherit some common DU stuff.
+$(call inherit-product, vendor/du/config/common_full_phone.mk)
 TARGET_BOOT_ANIMATION_RES := 1080
 
-# Inherit GApps
-ifeq ($(WITH_GMS),true)
-$(call inherit-product, vendor/gms/products/gms.mk)
-TARGET_GAPPS_ARCH := arm64
-WITH_GMS := true
-DEVICE_PACKAGE_OVERLAYS += \
-	$(LOCAL_PATH)/overlay-gms
-endif
-
-# RR Stuffs
-TARGET_FACE_UNLOCK_SUPPORTED := true
-RR_BUILDTYPE := Official
-
-# RR Wallpapers
-BUILD_RR_WALLPAPERS := true
+# Build Type
+DU_BUILD_TYPE=Official
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := rr_violet
+PRODUCT_NAME := du_violet
 PRODUCT_DEVICE := violet
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi Note 7 Pro
